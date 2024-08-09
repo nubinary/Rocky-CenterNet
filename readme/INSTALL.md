@@ -1,5 +1,23 @@
-# Installation
+# Installation (CPU mode)
 
+install anaconda
+open anaconda powershell
+conda install m2-base
+install cuda toolkit 12.4, download cudnn 9.2 and unzip contents into C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4
+To find cuda <> cudnn compatibility use: https://docs.nvidia.com/deeplearning/cudnn/latest/reference/support-matrix.html
+conda create --name rock-tech python
+conda activate rock-tech
+git clone git@github.com:nubinary/Rocky-CenterNet.git
+cd Rocky-CenterNet
+pip install -r requirements.txt
+cd ./src/lib/models/networks/DCNv2
+python setup.py build develop
+cd ..\..\..\external\
+make
+Get model from https://drive.google.com/file/d/15EkBUSIB_mDNhkXTHLzLJdrM_2azG1Am/view?usp=sharing and place in models folder
+
+
+# Original Installation process
 
 The code was tested on Ubuntu 18.04, with [Anaconda](https://www.anaconda.com/download) Python 3.6 and [PyTorch]((http://pytorch.org/)) v1.4. NVIDIA GPUs are needed for both training and testing. Installation can be done via conda, pip or Docker.
 In the case of Docker, a Dockerfile is included with the repository, with this a container with all installed packages and dependencies can be quickly obtained.

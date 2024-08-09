@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-python setup.py build develop
-python setup.py install
+sudo rm *.so
+sudo rm -r build/
+sudo python3 setup.py build develop
