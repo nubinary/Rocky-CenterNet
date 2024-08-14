@@ -1,20 +1,37 @@
 # Installation (CPU mode)
 
-install anaconda
-open anaconda powershell
-conda install m2-base
-install cuda toolkit 12.4, download cudnn 9.2 and unzip contents into C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4
-To find cuda <> cudnn compatibility use: https://docs.nvidia.com/deeplearning/cudnn/latest/reference/support-matrix.html
-conda create --name rock-tech python
-conda activate rock-tech
-git clone git@github.com:nubinary/Rocky-CenterNet.git
-cd Rocky-CenterNet
-pip install -r requirements.txt
-cd ./src/lib/models/networks/DCNv2
-python setup.py build develop
-cd ..\..\..\external\
-make
-Get model from https://drive.google.com/file/d/15EkBUSIB_mDNhkXTHLzLJdrM_2azG1Am/view?usp=sharing and place in models folder
+1. install anaconda
+
+2. open anaconda powershell
+
+3. conda install m2-base
+
+4. install cuda toolkit 12.4, download cudnn 9.2 and unzip contents into C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4
+
+5. To find cuda <> cudnn compatibility use: https://docs.nvidia.com/deeplearning/cudnn/latest/reference/support-matrix.html
+
+6. conda create --name rock-tech python
+
+7. conda activate rock-tech
+
+8. git clone git@github.com:nubinary/Rocky-CenterNet.git
+
+9. cd Rocky-CenterNet
+
+10. pip install -r requirements.txt
+
+11. pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI
+
+11. cd ./src/lib/models/networks/DCNv2
+
+12. python setup.py build develop
+
+13. cd ..\..\..\external\
+
+14. make
+
+15. Get model from https://drive.google.com/file/d/15EkBUSIB_mDNhkXTHLzLJdrM_2azG1Am/view?usp=sharing and place in models folder
+
 
 
 # Original Installation process
